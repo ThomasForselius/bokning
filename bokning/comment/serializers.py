@@ -1,13 +1,14 @@
 from rest_framework import serializers
 from rest_framework.response import Response
-from .models import Profile
+from .models import Comment
 
-class ProfileSerializer(serializers.ModelSerializer): 
+class CommentSerializer(serializers.ModelSerializer): 
     owner = serializers.ReadOnlyField(source='owner.username')
+    booking = serializers.ReadOnlyField(source='booking.date')
     is_owner = serializers.SerializerMethodField()
 
     def get(self, request):
-        serializer = ProfileSerializer(profiles, many= True) 
+        serializer = CommentSerializer(Comment, many= True) 
         return Response(serializer.data)
 
     def get_is_owner(self, obj): 
@@ -15,13 +16,12 @@ class ProfileSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta: 
-        model = Profile 
+        model = Comment 
         fields = [
             'id',
             'owner',
             'is_owner',
             'created_at',
             'updated_at',
-            'name',
-            'image',
+            'desc',
         ]
