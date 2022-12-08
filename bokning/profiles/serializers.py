@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.response import Response
 from .models import Profile
 
 class ProfileSerializer(serializers.ModelSerializer): 
@@ -8,13 +9,13 @@ class ProfileSerializer(serializers.ModelSerializer):
         serializer = ProfileSerializer(profiles, many= True) 
         return Response(serializer.data)
 
-    class Meta: model = Profile 
-    fields = [
-        'id',
-        'owner',
-        'created_at',
-        'updated_at',
-        'name',
-        'content',
-        'image',
-]
+    class Meta: 
+        model = Profile 
+        fields = [
+            'id',
+            'owner',
+            'created_at',
+            'updated_at',
+            'name',
+            'image',
+        ]

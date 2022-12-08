@@ -1,7 +1,6 @@
 # pylint: disable=no-member
-from rest_framework import generics, filters
-from django.db.models import Count
-#from randning_backend.permissions import IsOwnerOrReadOnly
+from rest_framework import generics
+from api.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
 
