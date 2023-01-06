@@ -4,7 +4,7 @@ from api.permissions import IsOwnerOrReadOnly
 from .models import Booking
 from .serializers import BookingSerializer
 
-class BookingList(generics.ListAPIView):
+class BookingList(generics.ListCreateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = BookingSerializer
     queryset = Booking.objects.all()
