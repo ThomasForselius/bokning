@@ -7,7 +7,7 @@ class BookingSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
 
     def get(self, request):
-        serializer = BookingSerializer(profiles, many= True) 
+        serializer = BookingSerializer(Booking, many= True) 
         return Response(serializer.data)
 
     def get_is_owner(self, obj): 

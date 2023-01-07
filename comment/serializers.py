@@ -24,7 +24,10 @@ class CommentSerializer(serializers.ModelSerializer):
     
     def get_updated_at(self, obj):
         return naturaltime(obj.updated_at)
-
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+    
     class Meta: 
         model = Comment 
         fields = [
