@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lghbokning.herokuapp.com', 'http://localhost:3000']
+ALLOWED_HOSTS = ['lghbokning.herokuapp.com', 'https://localhost:3000']
 
 
 # Application definition
@@ -95,6 +95,8 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.herokuapp\.com$", 
+    r"^https://localhost:3000", 
+
     ]
 CORS_ALLOW_CREDENTIALS = True
 JWT_AUTH_SAMESITE = 'None'
