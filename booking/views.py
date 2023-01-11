@@ -7,7 +7,15 @@ from .serializers import BookingSerializer
 class BookingList(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Booking.objects.all()
+    queryset = Booking.objects.all().order_by('date')
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+    search_fields = [
+        'date',
+        'owner',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
