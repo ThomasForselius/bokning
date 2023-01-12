@@ -6,7 +6,8 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 
 class CommentSerializer(serializers.ModelSerializer): 
     owner = serializers.ReadOnlyField(source='owner.username')
-    booking = serializers.ReadOnlyField(source='booking.date')
+    booking_date = serializers.ReadOnlyField(source='booking.date')
+    booking = serializers.ReadOnlyField(source='booking.id')
     is_owner = serializers.SerializerMethodField()
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
@@ -33,6 +34,8 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'owner',
+            'booking',
+            'booking_date',
             'is_owner',
             'created_at',
             'updated_at',

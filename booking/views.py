@@ -15,7 +15,7 @@ class BookingList(generics.ListCreateAPIView):
     ]
     search_fields = [
         'date',
-        'owner',
+        'owner__username',
     ]
     ordering_fields = [
         'owner__username',

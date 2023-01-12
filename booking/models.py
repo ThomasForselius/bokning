@@ -9,7 +9,7 @@ class Booking(models.Model):
     desc = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-date']
 
     def __str__(self):
         return f"{self.date}: {self.owner}"
