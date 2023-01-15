@@ -4,6 +4,7 @@ from api.permissions import IsOwnerOrReadOnly
 from .models import Booking
 from .serializers import BookingSerializer
 
+@login_required
 class BookingList(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -24,7 +25,8 @@ class BookingList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-    
+
+@login_required    
 class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve or update a booking if you're the owner.
