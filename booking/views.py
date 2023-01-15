@@ -1,12 +1,13 @@
 # pylint: disable=no-member
 from rest_framework import generics, permissions, filters
-from api.permissions import IsOwnerOrReadOnly, IsAuthenticated
+from api.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 from .models import Booking
 from .serializers import BookingSerializer
 
 class BookingList(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all().order_by('date')
     
     filter_backends = [
@@ -29,7 +30,7 @@ class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve or update a booking if you're the owner.
     """
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     

@@ -1,6 +1,7 @@
 # pylint: disable=no-member
 from rest_framework import generics
-from api.permissions import IsOwnerOrReadOnly, IsAuthenticated
+from api.permissions import IsOwnerOrReadOnly 
+from rest_framework.permissions import IsAuthenticated
 from .models import Profile
 from .serializers import ProfileSerializer
 
