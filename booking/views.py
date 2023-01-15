@@ -7,7 +7,7 @@ from .serializers import BookingSerializer
 
 class BookingList(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Booking.objects.all().order_by('date')
     
     filter_backends = [
@@ -30,7 +30,7 @@ class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve or update a booking if you're the owner.
     """
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     
