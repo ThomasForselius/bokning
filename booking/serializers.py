@@ -4,7 +4,7 @@ from .models import Booking
 
 class BookingSerializer(serializers.ModelSerializer): 
     owner = serializers.ReadOnlyField(source='owner.username')
-    owner_image = serializers.ReadOnlyField(source='owner_profile.image')
+    owner_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     is_owner = serializers.SerializerMethodField()
 
     def get(self, request):
@@ -23,7 +23,7 @@ class BookingSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at',
             'date',
-            'desc',
             'owner_image',
             'is_owner',
+            'desc',
         ]

@@ -33,4 +33,7 @@ class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+    # def perform_update(self, serializer):
+    #     return self.update(owner=self.request.user)
     
