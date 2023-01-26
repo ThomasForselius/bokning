@@ -24,4 +24,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             'updated_at',
             'name',
             'image',
+            'age', 
+            'bio',
         ]

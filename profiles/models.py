@@ -7,6 +7,8 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
+    bio = models.TextField(max_length=1000, blank=True)
+    age = models.IntegerField(blank=True, default=18)
     image = models.ImageField(upload_to='bokning/', default='profile_circle_cd6xw6.svg', blank=True)
 
     class Meta:
