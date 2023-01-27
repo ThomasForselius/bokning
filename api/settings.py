@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     'lghbokning.herokuapp.com',
     'http://localhost:3000',
     '127.0.0.1',
-    'http://lghbokningfrontend.herokuapp.com'
+    'lghbokningfrontend.herokuapp.com'
     ]
 
 
