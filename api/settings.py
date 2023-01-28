@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     'lghbokning.herokuapp.com',
     'http://localhost:3000',
     '127.0.0.1',
-    'lghbokningfrontend.herokuapp.com'
+    'http://lghbokningfrontend.herokuapp.com'
     ]
 
 
@@ -100,6 +100,7 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.herokuapp\.com$", 
+    r"^http://.*\.herokuapp\.com$", 
     r"^http://localhost:3000", 
 
     ]
