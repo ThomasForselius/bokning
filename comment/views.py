@@ -19,9 +19,11 @@ class CommentList(generics.ListCreateAPIView):
     search_fields = [
         'date',
         'owner',
+        'receiver__username'
     ]
     ordering_fields = [
         'owner__username',
+        'receiver__username',
         'date'
     ]
 
