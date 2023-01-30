@@ -16,7 +16,7 @@ This is the Django Rest Framework API project section.
 | profiles  | user     | edit a profile                    | update my profile information                                                                    | Update profile                                   |
 
 ## Entity Relationship Diagram
-![ERD](https://res.cloudinary.com/dgjrrvdbl/image/upload/v1649155000/moments-api-erd_aw81vx.png)
+![ERD](db_relations.png)
 
 ## Models and CRUD breakdown
 | model     | endpoints                    | create        | retrieve | update | delete | filter                   | text search |
@@ -25,8 +25,6 @@ This is the Django Rest Framework API project section.
 | profiles  | profiles/<br>profiles/:pk/   | yes (signals) | yes      | yes    | no     | no                       | no          |
 | bookings  | bookings/<br>bookings/:pk/   | yes           | yes      | yes    | yes    | date<br>desc             | yes         |
 | comments  | comment/<br>comment/:pk/   | yes           | yes      | yes    | yes    | profile<br>date          | no          |
-
-![DB Relations](db_relations.png)
 
 ## Tests
 
