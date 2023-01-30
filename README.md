@@ -26,6 +26,8 @@ This is the Django Rest Framework API project section.
 | bookings  | bookings/<br>bookings/:pk/   | yes           | yes      | yes    | yes    | date<br>desc             | yes         |
 | comments  | comment/<br>comment/:pk/   | yes           | yes      | yes    | yes    | profile<br>date          | no          |
 
+![DB Relations](db_relations.png)
+
 ## Tests
 
 ### Testing is done manually by the following steps: 
