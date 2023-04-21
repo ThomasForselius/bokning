@@ -14,4 +14,4 @@ class Comment(models.Model):
         ordering = ['-created_at']
 
     def __str__(self): 
-        return f' Booking: {self.booking.date}, Comment by {self.owner}'
+        return f' Booking: {Booking.date}, Comment by {self.owner}'
