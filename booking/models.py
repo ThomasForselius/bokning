@@ -11,5 +11,6 @@ class Booking(models.Model):
     class Meta:
         ordering = ['-date']
 
+
     def __str__(self):
         return f"{self.date}: {self.owner}"
